@@ -21,13 +21,12 @@
   </properties>
 
   <dependencies>
-    <!-- Spring-WS (SOAP) -->
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web-services</artifactId>
     </dependency>
 
-    <!-- JAXB runtime -->
     <dependency>
       <groupId>org.glassfish.jaxb</groupId>
       <artifactId>jaxb-runtime</artifactId>
@@ -38,6 +37,13 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+  <groupId>wsdl4j</groupId>
+  <artifactId>wsdl4j</artifactId>
+  <version>1.6.3</version>
+</dependency>
+
   </dependencies>
 
   <build>
