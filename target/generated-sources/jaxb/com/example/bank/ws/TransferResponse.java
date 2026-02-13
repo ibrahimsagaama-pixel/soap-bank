@@ -8,6 +8,7 @@
 
 package com.example.bank.ws;
 
+import java.math.BigDecimal;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -25,7 +26,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="account" type="{http://example.com/bank}AccountType"/&gt;
+ *         &lt;element name="fromNewBalance" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *         &lt;element name="toNewBalance" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +38,63 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "account"
+    "fromNewBalance",
+    "toNewBalance"
 })
-@XmlRootElement(name = "GetAccountResponse")
-public class GetAccountResponse {
+@XmlRootElement(name = "TransferResponse")
+public class TransferResponse {
 
     @XmlElement(required = true)
-    protected AccountType account;
+    protected BigDecimal fromNewBalance;
+    @XmlElement(required = true)
+    protected BigDecimal toNewBalance;
 
     /**
-     * Obtient la valeur de la propriété account.
+     * Obtient la valeur de la propriété fromNewBalance.
      * 
      * @return
      *     possible object is
-     *     {@link AccountType }
+     *     {@link BigDecimal }
      *     
      */
-    public AccountType getAccount() {
-        return account;
+    public BigDecimal getFromNewBalance() {
+        return fromNewBalance;
     }
 
     /**
-     * Définit la valeur de la propriété account.
+     * Définit la valeur de la propriété fromNewBalance.
      * 
      * @param value
      *     allowed object is
-     *     {@link AccountType }
+     *     {@link BigDecimal }
      *     
      */
-    public void setAccount(AccountType value) {
-        this.account = value;
+    public void setFromNewBalance(BigDecimal value) {
+        this.fromNewBalance = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété toNewBalance.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getToNewBalance() {
+        return toNewBalance;
+    }
+
+    /**
+     * Définit la valeur de la propriété toNewBalance.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setToNewBalance(BigDecimal value) {
+        this.toNewBalance = value;
     }
 
 }

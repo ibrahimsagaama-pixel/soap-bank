@@ -8,6 +8,7 @@
 
 package com.example.bank.ws;
 
+import java.math.BigDecimal;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -25,7 +26,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="account" type="{http://example.com/bank}AccountType"/&gt;
+ *         &lt;element name="newBalance" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +37,36 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "account"
+    "newBalance"
 })
-@XmlRootElement(name = "GetAccountResponse")
-public class GetAccountResponse {
+@XmlRootElement(name = "WithdrawResponse")
+public class WithdrawResponse {
 
     @XmlElement(required = true)
-    protected AccountType account;
+    protected BigDecimal newBalance;
 
     /**
-     * Obtient la valeur de la propriété account.
+     * Obtient la valeur de la propriété newBalance.
      * 
      * @return
      *     possible object is
-     *     {@link AccountType }
+     *     {@link BigDecimal }
      *     
      */
-    public AccountType getAccount() {
-        return account;
+    public BigDecimal getNewBalance() {
+        return newBalance;
     }
 
     /**
-     * Définit la valeur de la propriété account.
+     * Définit la valeur de la propriété newBalance.
      * 
      * @param value
      *     allowed object is
-     *     {@link AccountType }
+     *     {@link BigDecimal }
      *     
      */
-    public void setAccount(AccountType value) {
-        this.account = value;
+    public void setNewBalance(BigDecimal value) {
+        this.newBalance = value;
     }
 
 }

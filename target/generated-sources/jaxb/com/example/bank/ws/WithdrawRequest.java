@@ -8,6 +8,7 @@
 
 package com.example.bank.ws;
 
+import java.math.BigDecimal;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -25,7 +26,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="account" type="{http://example.com/bank}AccountType"/&gt;
+ *         &lt;element name="accountId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +38,63 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "account"
+    "accountId",
+    "amount"
 })
-@XmlRootElement(name = "GetAccountResponse")
-public class GetAccountResponse {
+@XmlRootElement(name = "WithdrawRequest")
+public class WithdrawRequest {
 
     @XmlElement(required = true)
-    protected AccountType account;
+    protected String accountId;
+    @XmlElement(required = true)
+    protected BigDecimal amount;
 
     /**
-     * Obtient la valeur de la propriété account.
+     * Obtient la valeur de la propriété accountId.
      * 
      * @return
      *     possible object is
-     *     {@link AccountType }
+     *     {@link String }
      *     
      */
-    public AccountType getAccount() {
-        return account;
+    public String getAccountId() {
+        return accountId;
     }
 
     /**
-     * Définit la valeur de la propriété account.
+     * Définit la valeur de la propriété accountId.
      * 
      * @param value
      *     allowed object is
-     *     {@link AccountType }
+     *     {@link String }
      *     
      */
-    public void setAccount(AccountType value) {
-        this.account = value;
+    public void setAccountId(String value) {
+        this.accountId = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété amount.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    /**
+     * Définit la valeur de la propriété amount.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setAmount(BigDecimal value) {
+        this.amount = value;
     }
 
 }
