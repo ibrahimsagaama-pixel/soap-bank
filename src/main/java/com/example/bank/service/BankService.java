@@ -1,9 +1,11 @@
 package com.example.bank.service;
 
+import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+@Service   // 🔥 AJOUTE CETTE LIGNE
 public class BankService {
 
     // Représentation interne d'un compte
